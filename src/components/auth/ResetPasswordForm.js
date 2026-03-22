@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import styles from './ResetPasswordForm.module.css';
 import { authService } from '@/services/authService';
+import InputField from '../ui/InputField';
+import Button from '../ui/Button';
 
 export default function ResetPasswordForm() {
   const router = useRouter();
@@ -82,7 +84,7 @@ export default function ResetPasswordForm() {
                 New Password
               </label>
               <div className={styles.inputWrapper}>
-                <input
+                <InputField
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   value={password}
@@ -94,14 +96,14 @@ export default function ResetPasswordForm() {
                   minLength="8"
                   maxLength="72"
                 />
-                <button
+                <Button
                   type="button"
                   className={styles.toggleButton}
                   onClick={() => setShowPassword(!showPassword)}
                   disabled={isLoading}
                 >
                   {showPassword ? '👁️' : '👁️‍🗨️'}
-                </button>
+                </Button>
               </div>
               <small className={styles.hint}>At least 8 characters</small>
             </div>
@@ -111,7 +113,7 @@ export default function ResetPasswordForm() {
                 Confirm Password
               </label>
               <div className={styles.inputWrapper}>
-                <input
+                <InputField
                   type={showConfirmPassword ? 'text' : 'password'}
                   id="confirmPassword"
                   value={confirmPassword}
@@ -123,14 +125,14 @@ export default function ResetPasswordForm() {
                   minLength="8"
                   maxLength="72"
                 />
-                <button
+                <Button
                   type="button"
                   className={styles.toggleButton}
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   disabled={isLoading}
                 >
                   {showConfirmPassword ? '👁️' : '👁️‍🗨️'}
-                </button>
+                </Button>
               </div>
             </div>
 

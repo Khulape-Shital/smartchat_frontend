@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './ForgotPasswordForm.module.css';
 import { authService } from '@/services/authService';
+import InputField from '../ui/InputField';
 
 export default function ForgotPasswordForm() {
   const router = useRouter();
@@ -51,7 +52,7 @@ export default function ForgotPasswordForm() {
             <label htmlFor="email" className={styles.label}>
               Email Address
             </label>
-            <input
+            <InputField
               type="email"
               id="email"
               value={email}

@@ -238,7 +238,27 @@ export default function MyComponent() {
 }
 ```
 
-## 🔄 API Client Interceptors
+## � Screenshots
+
+### Login Page
+![Login](./public/images/login.png)
+
+### Google Login
+![Google Login](./public/images/google_login.png)
+
+### Email Verification
+![Email Verification](./public/images/email.png)
+
+### Forgot Password
+![Forgot Password](./public/images/forgot_password.png)
+
+### Chat Dashboard
+![Chat Dashboard](./public/images/dashboard.png)
+
+### AI Response Example
+![AI Response](./public/images/response.png)
+
+## �🔄 API Client Interceptors
 
 ### Request Interceptor
 - Adds `Authorization: Bearer {token}` header
