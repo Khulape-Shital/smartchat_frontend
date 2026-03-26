@@ -32,12 +32,12 @@ export default function AuthProvider({ children }) {
 
   const isAuthenticated = !!user
 
-  // ✅ FIX 2: Clear error on route change
+  //   FIX 2: Clear error on route change
   useEffect(() => {
     setError(null)
   }, [pathname])
 
-  // ✅ LOGIN
+  //   LOGIN
   const login = useCallback(async (credentials) => {
     setIsLoading(true)
     setError(null)
@@ -55,7 +55,7 @@ export default function AuthProvider({ children }) {
 
       if (data.user) {
         localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(data.user))
-        setUser(data.user) // ✅ important for reactivity
+        setUser(data.user) //   important for reactivity
       }
 
       return data
@@ -69,7 +69,7 @@ export default function AuthProvider({ children }) {
     }
   }, [])
 
-  // ✅ REGISTER
+  //  REGISTER
   const register = useCallback(async (userData) => {
     setIsLoading(true)
     setError(null)
@@ -85,7 +85,7 @@ export default function AuthProvider({ children }) {
 
       if (data.user) {
         localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(data.user))
-        setUser(data.user) // ✅ important
+        setUser(data.user) //  important
       }
 
       return data
@@ -101,7 +101,7 @@ export default function AuthProvider({ children }) {
     }
   }, [])
 
-  // ✅ GOOGLE LOGIN (used by GoogleLoginButton)
+  //  GOOGLE LOGIN (used by GoogleLoginButton)
   const googleAuthLogin = useCallback(async (token) => {
     setIsLoading(true)
     setError(null)
@@ -117,7 +117,7 @@ export default function AuthProvider({ children }) {
 
       if (data.user) {
         localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(data.user))
-        setUser(data.user) // ✅ important
+        setUser(data.user) //  important
       }
 
       return data
@@ -133,7 +133,7 @@ export default function AuthProvider({ children }) {
     }
   }, [])
 
-  // ✅ LOGOUT (centralized + redirect)
+  //  LOGOUT (centralized + redirect)
   const logout = useCallback(() => {
     localStorage.removeItem(STORAGE_KEYS.ACCESS_TOKEN)
     localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN)
@@ -142,12 +142,12 @@ export default function AuthProvider({ children }) {
     setUser(null)
     setError(null)
 
-    router.replace(ROUTES.LOGIN) // ✅ FIX
+    router.replace(ROUTES.LOGIN)    
   }, [router])
 
   const value = {
-    user,                // ✅ exposed
-    isAuthenticated,     // ✅ exposed
+    user,                 
+    isAuthenticated,      
     login,
     register,
     googleAuthLogin,
