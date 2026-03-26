@@ -7,8 +7,7 @@ const getStorageItem = (key) => {
   if (typeof window === "undefined") return null
   return localStorage.getItem(key)
 }
-
-// ✅ helper: clear auth + redirect (centralized)
+ 
 const clearAuthAndRedirect = () => {
   if (typeof window === "undefined") return
 
@@ -25,7 +24,7 @@ const apiClient = axios.create({
  
 })
 
-// Flag to prevent multiple refresh attempts
+ 
 let isRefreshing = false
 let failedQueue = []
 
