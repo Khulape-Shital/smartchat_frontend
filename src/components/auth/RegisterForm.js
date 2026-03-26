@@ -44,7 +44,7 @@ export default function RegisterForm() {
   const [serverError, setServerError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  // ✅ FIX: Check BOTH storages + use replace
+ 
   useEffect(() => {
     const token =
       localStorage.getItem(STORAGE_KEYS.ACCESS_TOKEN) ||
