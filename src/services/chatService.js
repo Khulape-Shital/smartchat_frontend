@@ -34,8 +34,7 @@ export const updateChatTitle = async (chatId, title) => {
 
 export const deleteChat = async (chatId) => {
   const res = await apiClient.delete(`${CHAT_API_URL}/chats/${chatId}`)
-  // 204 No Content has no response body, just return success
-  // return res.status === 204 ? { success: true } : res.data
+   
   return
 
 }
