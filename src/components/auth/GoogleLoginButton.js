@@ -8,16 +8,16 @@ import styles from "./GoogleLoginButton.module.css"
 
 export default function GoogleLoginButton() {
   const router = useRouter()
-  const { googleAuthLogin } = useAuth() // ✅ use context
+  const { googleAuthLogin } = useAuth() 
 
   const handleSuccess = async (credentialResponse) => {
     const token = credentialResponse.credential
 
     try {
-      // ✅ delegate to context
+  
       await googleAuthLogin(token)
 
-      router.replace(ROUTES.CHAT) // ✅ better than push
+      router.replace(ROUTES.CHAT)  
     } catch (error) {
       console.error(ERROR_MESSAGES.GOOGLE_LOGIN, error)
     }
