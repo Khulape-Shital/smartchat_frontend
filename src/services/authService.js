@@ -1,7 +1,7 @@
 import axios from "axios"
 import { AUTH_API_URL } from "@/lib/constants"
 
-// ✅ Helper: normalize all errors
+ 
 const normalizeError = (err) => {
   return {
     message:
@@ -22,7 +22,7 @@ export const registerUser = async (data) => {
     const response = await axios.post(`${AUTH_API_URL}/register`, data)
     return response.data
   } catch (err) {
-    throw normalizeError(err) // ✅ consistent error
+    throw normalizeError(err) / 
   }
 }
 
